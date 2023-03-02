@@ -27,7 +27,7 @@ body {
   
   main {
     margin: 20px;
-    background: #ffffff4a;
+    background: #ffffff85;
     padding: 10px;
     border-radius: 15px;
     width: 50%;
@@ -47,11 +47,57 @@ body {
   table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
   }
   
   table th {
     background-color: #f2f2f2;
+  }
+
+  .btnEditar {
+    box-shadow: 0px 10px 11px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color: #599bb3;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+    margin-bottom: 7px;
+  }
+  .btnEditar:hover {
+    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color:#408c99;
+  }
+  .btnEditar:active {
+    position:relative;
+    top:1px;
+  }
+
+  .btnExcluir {
+    box-shadow: 0px 10px 11px -7px #e67a73;
+    background-color: #e4685d;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #b23e35;
+  }
+  .btnExcluir:hover {
+    background-color:#eb675e;
+  }
+  .btnExcluir:active {
+    position:relative;
+    top:1px;
   }
   
   form {

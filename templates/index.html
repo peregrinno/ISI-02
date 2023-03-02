@@ -10,7 +10,7 @@
         <th>Nome</th>
         <th>Descrição</th>
         <th>Valor</th>
-        <th>Quantidade em Estoque</th>
+        <th>Estoque</th>
         <th>Ações</th>
       </tr>
     </thead>
@@ -22,8 +22,9 @@
           <td>{{ celular[3] }}</td>
           <td>{{ celular[4] }}</td>
           <td>
-            <a href="{{ url_for('edit', id=celular[0]) }}">Editar</a>
-            <a href="{{ url_for('delete', id=celular[0]) }}">Excluir</a>
+            <a href="{{ url_for('edit', id=celular[0]) }}" class="btnEditar">Editar</a>
+            <br>
+            <a href="{{ url_for('delete', id=celular[0]) }}" class="btnExcluir">Excluir</a>
           </td>
         </tr>
       {% endfor %}
