@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Celular{% endblock %}
+
+{% block content %}
+  <h1>Editar Celular</h1>
+  {% if celular and len(celular) > 0 %}
+    <form action="{{ url_for('update', id=celular[0]) }}" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="{{ celular[1] }}" required>
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" required>{{ celular[2] }}</textarea>
+      <label for="valor">Valor:</label>
+      <input type="number" id="valor" name="valor" step="0.01" min="0" value="{{ celular[3] }}" required>
+
+      <label for="quantidade">Quantidade em Estoque:</label>
+      <input type="number" id="quantidade" name="quantidade" min="0" value="{{ celular[4] }}" required>
+
+      <button type="submit">Salvar</button>
+    </form>
+  {% else %}
+    <p>Celular não encontrado</p>
+  {% endif %}
+{% endblock %}

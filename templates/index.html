@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Início{% endblock %}
+
+{% block content %}
+  <h1>Celulares</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Quantidade em Estoque</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for celular in celulares %}
+        <tr>
+          <td>{{ celular[1] }}</td>
+          <td>{{ celular[2] }}</td>
+          <td>{{ celular[3] }}</td>
+          <td>{{ celular[4] }}</td>
+          <td>
+            <a href="{{ url_for('edit', id=celular[0]) }}">Editar</a>
+            <a href="{{ url_for('delete', id=celular[0]) }}">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

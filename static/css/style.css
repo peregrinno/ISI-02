@@ -1,0 +1,165 @@
+/* Estilos gerais */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: url('../imgs/wallpaper-login.jpg'); /* fundo gradiente */
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  nav {
+    background-color: #333;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  main {
+    margin: 20px;
+    background: #ffffff4a;
+    padding: 10px;
+    border-radius: 15px;
+    width: 50%;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  label {
+    margin-top: 10px;
+  }
+  
+  input[type="text"],
+  textarea,
+  input[type="number"] {
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  button[type="submit"] {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #555;
+  }
+  
+  /* Estilos para menu responsivo */
+  
+  @media screen and (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    nav a {
+      width: 100%;
+      text-align: center;
+    }
+
+    .login-box {
+      margin-top: 15%;
+      background: #ffffff24;
+      border: 1px solid #fff;
+      padding: 20px;
+      width: 250px;
+      border-radius: 20px;
+      margin-left: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 1500px) {
+    .login-box {
+      margin-top: 15%;
+      background: #ffffff24;
+      border: 1px solid #fff;
+      padding: 20px;
+      width: 250px;
+      border-radius: 20px;
+      margin-left: 45%;
+    }
+  } 
+
+  .login-box {
+    margin-top: 15%;
+    background: #ffffff24;
+    border: 1px solid #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 20px;
+    margin-left: 45%;
+  }
+  
+  .login-box h1 {
+    color: #2c2c2c;
+    text-align: center;
+  }
+  
+  .login-box form label {
+    color: rgb(29, 29, 29);
+  }
+  
+  .login-box form input[type="text"],
+  .login-box form input[type="password"],
+  .login-box form input[type="submit"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+    color: #2c2c2c;
+    inline-size: auto;
+    border: none;
+    background: #fbfbfba6;
+  }
+  
+  .login-box form input[type="submit"] {
+    background: #fff;
+    color: #454545;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
