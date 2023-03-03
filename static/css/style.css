@@ -3,7 +3,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-image: url('../imgs/wallpaper-login.jpg'); /* fundo gradiente */
+    background-image: url('../imgs/wallpaper-login.png'); /* fundo gradiente */
     background-size: cover;
     background-attachment: fixed;
   }
@@ -19,6 +19,7 @@ body {
     text-decoration: none;
     padding: 20px;
     font-size: 18px;
+    margin-left: 1%;
   }
   
   nav a:hover {
@@ -30,12 +31,13 @@ body {
     background: #ffffff85;
     padding: 10px;
     border-radius: 15px;
-    width: 50%;
   }
   
   h1 {
     font-size: 24px;
     margin-bottom: 10px;
+    margin-left: 10px;
+    color: #2c2c2c;
   }
   
   table {
@@ -208,4 +210,24 @@ body {
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
+  }
+
+  .profile {
+    color: #454545;
+    margin-left: auto;
+    text-align: center;
+    padding: 6px;
+    font-size: 15pt;
+  }
+
+  .profile p {
+    width: 150px;
+  }
+
+  .btnExit {
+    width: 50px;
+    padding: 20px;
+    text-align: center;
+    margin-right: 2%;
+    margin-left: auto;
   }

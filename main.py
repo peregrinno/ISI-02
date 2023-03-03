@@ -7,6 +7,7 @@ app.secret_key = 'internetemSI2023Jorge'
 
 # Adicionar a função len() ao contexto global do Jinja2
 app.jinja_env.globals.update(len=len)
+usuario = ""
 
 @app.route('/')
 def index():
@@ -15,32 +16,22 @@ def index():
         cur = conn.cursor()
         cur.execute("SELECT * FROM celulares")
         celulares = cur.fetchall()
+        cur.execute('SELECT usuario FROM usuarios WHERE id = 1')
+        usuario = cur.fetchone()[0]
+        print (usuario)
+        cur.close()
         conn.close()
-        return render_template('index.html', celulares=celulares)
+
+        return render_template('index.html', celulares=celulares, usuario=usuario)
     return redirect(url_for('login'))
 
+# Rota para logout
 @app.route('/logout')
 def logout():
+    session.pop('usuario', None)
     session.pop('autenticado', None)
-    return redirect(url_for('index'))
-
-@app.route('/cadastro', methods=['GET', 'POST'])
-def cadastro():
-    if request.method == 'POST':
-        usuario = request.form['usuario']
-        senha = request.form['senha']
-         # Insere o usuário e senha na tabela de usuários
-        conn = sqlite3.connect('celulares.db')
-        cursor = conn.cursor()
-
-        cursor.execute('INSERT INTO usuarios (usuario, senha) VALUES (?, ?)', (usuario, senha))
-        conn.commit()
-
-        cursor.close()
-        conn.close()
-
-        return redirect(url_for('login'))
-    return render_template('cadastro.html')
+    
+    return redirect(url_for('login'))
 
     
 @app.route('/login', methods=['GET', 'POST'])
@@ -61,12 +52,11 @@ def login():
 
         if resultado[0] == 1:
             session['autenticado'] = True
+            
             return redirect(url_for('index'))
         else:
             return render_template('login.html', erro='Usuário ou senha invalidos')
     return render_template('login.html')
-
-    
 
 
 @app.route('/add', methods=['GET', 'POST'])
@@ -131,3 +121,4 @@ def edit():
 
 if __name__ == '__main__':
     app.run(debug=True)
+

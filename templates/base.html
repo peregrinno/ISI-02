@@ -9,7 +9,10 @@
 <body>
   <nav>
     <a href="{{ url_for('index') }}">Início</a>
-    <a href="{{ url_for('add') }}">Adicionar Celular</a>
+    <a href="{{ url_for('add') }}">Novo aparelho</a>
+    <div class="btnExit">
+      <a href="{{ url_for('logout') }}">Sair</a>
+    </div>
   </nav>
   <main>
     {% block content %}{% endblock %}
