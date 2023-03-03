@@ -231,3 +231,14 @@ body {
     margin-right: 2%;
     margin-left: auto;
   }
+
+  footer {
+    background-color: #454545;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 98.9%;
+  }
+  
