@@ -10,6 +10,16 @@ app.jinja_env.globals.update(len=len)
 usuario = ""
 
 @app.route('/')
+def market():
+    conn = sqlite3.connect('celulares.db')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM celulares")
+    celulares = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template('market.html', celulares=celulares)
+
+@app.route('/index')
 def index():
     if 'autenticado' in session:
         conn = sqlite3.connect('celulares.db')

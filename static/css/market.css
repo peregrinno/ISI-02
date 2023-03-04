@@ -1,0 +1,251 @@
+
+  /* Estilo do banner */
+  .banner {
+    height: 500px;
+    background-image: url('https://picsum.photos/1000/500');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .banner h1 {
+    color: #fff;
+    font-size: 4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* Estilo do menu */
+  .menu {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  /* Estilo dos cards de produtos */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .card p {
+    margin: 1rem;
+  }
+  
+  .card .price {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card button:hover {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Estilo do carrinho */
+  .cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cart.show {
+    transform: translateX(0%);
+  }
+  
+  .cart h2 {
+    font-size: 2rem;
+    margin: 2rem;
+    text-align: center;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2rem;
+  }
+  
+  .cart .total {
+    margin: 2rem;
+    text-align: right;
+  }
+  
+  .cart .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+  }
+  
+  .cart button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    }
+  
+  
+    /* Definindo o estilo para o corpo da página */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+  
+  /* Definindo o estilo para o cabeçalho */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Definindo o estilo para o título do cabeçalho */
+  header h1 {
+    margin: 0;
+  }
+  
+  /* Definindo o estilo para a navegação */
+  nav {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  /* Definindo o estilo para os links da navegação */
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+  }
+  
+  /* Definindo o estilo para a seção principal */
+  main {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  /* Definindo o estilo para cada card */
+  .card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  /* Definindo o estilo para a imagem do card */
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Definindo o estilo para o título do card */
+  .card h2 {
+    margin: 10px;
+  }
+  
+  /* Definindo o estilo para o texto do card */
+  .card p {
+    margin: 10px;
+    font-size: 16px;
+  }
+  
+  /* Definindo o estilo para o botão de ação do card */
+  .card button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .card button:hover {
+    background-color: #555;
+  }
+  
+  /* Definindo o estilo para o rodapé */
+  footer {
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
