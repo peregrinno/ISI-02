@@ -153,7 +153,7 @@
   
     /* Definindo o estilo para o corpo da página */
   body {
-    margin-left: 7%;
+    margin-inline: 5%;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #FFF6EA;
