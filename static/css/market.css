@@ -265,3 +265,16 @@
     margin-right: 10px;
     color: beige;
   }
+
+  .container-cart {
+    margin-top: 20px;
+    position: fixed;
+    top: 7%;
+    margin-left: 60%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 4px 5px 5px #00000030;
+    width: 30%;
+    font-size: 10pt;
+  }

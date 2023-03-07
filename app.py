@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
+from flask import request
 import hashlib
 
 app = Flask(__name__, template_folder="templates")
@@ -8,6 +9,50 @@ app.secret_key = 'internetemSI2023Jorge'
 # Adicionar a função len() ao contexto global do Jinja2
 app.jinja_env.globals.update(len=len)
 usuario = ""
+
+# variáveis globais para armazenar os itens do carrinho e o total
+cartItems = {}
+cartTotal = 0
+
+@app.route('/adicionar-ao-carrinho', methods=['POST'])
+def adicionarAoCarrinho():
+    # extrair o nome do celular do id do botão
+    nomeCelular = request.form['nome-celular']
+
+    conn = sqlite3.connect('celulares.db')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM celulares")
+    celulares = cur.fetchall()
+    cur.close()
+    conn.close()
+
+    # encontrar o celular na lista de celulares
+    celular = [celular for celular in celulares if celular[1] == nomeCelular]
+
+    # verificar se o celular foi encontrado
+    if celular:
+        # atualiza o objeto do carrinho
+        itemId = celular[1]
+        itemPreco = float(celular[3])
+        if cartItems.get(itemId):
+            cartItems[itemId]['quantidade'] += 1
+            cartItems[itemId]['total'] = itemPreco * cartItems[itemId]['quantidade']
+        else:
+            cartItems[itemId] = {
+                'nome': celular[2],
+                'preco': itemPreco,
+                'quantidade': 1,
+                'total': itemPreco
+            }
+        # atualiza o total do carrinho
+        cartTotal += itemPreco
+
+        # retorna uma resposta vazia, já que o HTML será atualizado por meio de JavaScript
+        return ''
+    else:
+        # retorna uma mensagem de erro
+        return 'Celular não encontrado: ' + nomeCelular
+
 
 @app.route('/')
 def market():
