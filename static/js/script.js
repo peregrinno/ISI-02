@@ -7,9 +7,9 @@ const celulares = [];
 const elementosCelular = document.querySelectorAll(".card-body");
 
 elementosCelular.forEach(elemento => {
-  const nomeCelular = elemento.querySelector("h5").textContent;
-  const precoCelular = elemento.querySelector("p:nth-of-type(2)").textContent.replace('R$ ', '');
-  celulares.push([nomeCelular, precoCelular]);
+    const nomeCelular = elemento.querySelector("h5").textContent;
+    const precoCelular = elemento.querySelector("p:nth-of-type(2)").textContent.replace('R$ ', '');
+    celulares.push([nomeCelular, precoCelular]);
 });
 
 console.log(celulares);
@@ -51,7 +51,7 @@ function adicionarAoCarrinho(idBotao) {
 
     // encontrar o celular na lista de celulares
     const celular = celulares.find(celular => celular[0] === nomeCelular);
-    
+
 
     // verificar se o celular foi encontrado
     if (celular) {

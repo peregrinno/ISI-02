@@ -17,6 +17,9 @@
       <label for="quantidade">Quantidade em Estoque:</label>
       <input type="number" id="quantidade" name="quantidade" min="0" value="{{ celular[4] }}" required>
 
+      <label for="url_celular">Imagem:</label>
+      <input type="text" id="url_celular" name="url_celular" value="{{ celular[5]}}" required>
+
       <button type="submit">Salvar</button>
     </form>
   {% else %}

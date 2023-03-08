@@ -21,7 +21,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
+                    <a class="nav-link" href="/#produtos">Produtos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('login') }}">Administrador</a>
@@ -36,7 +36,8 @@
     </div>
 
     <!-- Produtos -->
-    <div class="container">
+    <div class="container" id="produtos">
+        <h2>Marketplace</h2>
         <div class="row">
             {% for celular in celulares %}
             <div class="col-md-4 mb-3">

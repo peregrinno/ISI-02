@@ -121,10 +121,11 @@ def add():
         descricao = request.form['descricao']
         valor = request.form['valor']
         quantidade = request.form['quantidade']
+        url_celular = request.form['url_celular']
 
         conn = sqlite3.connect('celulares.db')
         cur = conn.cursor()
-        cur.execute("INSERT INTO celulares (nome, descricao, valor, quantidade) VALUES (?, ?, ?, ?)", (nome, descricao, valor, quantidade))
+        cur.execute("INSERT INTO celulares (nome, descricao, valor, quantidade, url_celular) VALUES (?, ?, ?, ?, ?)", (nome, descricao, valor, quantidade, url_celular))
         conn.commit()
         conn.close()
 
@@ -151,10 +152,11 @@ def update(id):
     descricao = request.form['descricao']
     valor = request.form['valor']
     quantidade = request.form['quantidade']
+    url_celular = request.form['url_celular']
 
     conn = sqlite3.connect('celulares.db')
     cur = conn.cursor()
-    cur.execute("UPDATE celulares SET nome=?, descricao=?, valor=?, quantidade=? WHERE id=?", (nome, descricao, valor, quantidade, id))
+    cur.execute("UPDATE celulares SET nome=?, descricao=?, valor=?, quantidade=?, url_celular=? WHERE id=?", (nome, descricao, valor, quantidade, url_celular, id))
     conn.commit()
     conn.close()
 
@@ -172,6 +174,7 @@ def edit():
     conn.close()
 
     return render_template('edit.html', celular=celular)
+    
 
 
 if __name__ == '__main__':
