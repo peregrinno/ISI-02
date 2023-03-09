@@ -12,11 +12,16 @@ elementosCelular.forEach(elemento => {
     celulares.push([nomeCelular, precoCelular]);
 });
 
-console.log(celulares);
-
 // função para atualizar a tabela do carrinho
 function atualizarCarrinho() {
+    document.querySelector('.container-cart').style.display = "flex";
     const carrinho = document.querySelector('.cart-table tbody');
+
+    
+    // atualiza os valores dos campos hidden do formulário
+    const cartItemsInput = document.querySelector('input[name="cartItems"]');
+    const cartTotalInput = document.querySelector('input[name="cartTotal"]');
+
     carrinho.innerHTML = '';
 
     // loop pelos itens do carrinho
@@ -42,6 +47,9 @@ function atualizarCarrinho() {
         const totalContainer = document.querySelector('.cart-total-container span');
         totalContainer.textContent = 'R$ ' + cartTotal.toFixed(2);
     }
+
+    cartItemsInput.value = JSON.stringify(cartItems);
+    cartTotalInput.value = cartTotal.toFixed(2);
 }
 
 // função para adicionar um item ao carrinho
@@ -78,3 +86,7 @@ function adicionarAoCarrinho(idBotao) {
         console.log('Celular não encontrado: ' + nomeCelular);
     }
 }
+
+
+
+

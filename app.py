@@ -175,6 +175,20 @@ def edit():
 
     return render_template('edit.html', celular=celular)
     
+@app.route('/finalizar_compra', methods=['GET', 'POST'])
+def finalizar_compra():
+    if request.method == 'POST':
+        # Obtenha o método de pagamento escolhido pelo usuário
+        metodo_pagamento = request.form['metodo_pagamento']
+        
+        # Faça o processamento do pagamento aqui
+        # ...
+        
+        # Redirecione o usuário para a página de sucesso do pagamento
+        return redirect(url_for('sucesso_pagamento'))
+    
+    # Se a requisição for GET, renderize a página de finalizar compra com os itens do carrinho
+    return render_template('finalizar_compra.html', cartItems=cartItems, cartTotal=cartTotal)
 
 
 if __name__ == '__main__':

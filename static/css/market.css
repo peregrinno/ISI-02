@@ -29,85 +29,6 @@ html {
     text-align: center;
   }
   
-  /* Estilo do menu */
-  .menu {
-    background-color: #333;
-    color: #FFF6EA;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-  }
-  
-  .menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem;
-  }
-  /* Estilo do carrinho */
-  .cart {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .cart.show {
-    transform: translateX(0%);
-  }
-  
-  .cart h2 {
-    font-size: 2rem;
-    margin: 2rem;
-    text-align: center;
-  }
-  
-  .cart ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .cart li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 2rem;
-  }
-  
-  .cart .total {
-    margin: 2rem;
-    text-align: right;
-  }
-  
-  .cart .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem;
-  }
-  
-  .cart button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 1rem;
-    font-size: 1rem;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    }
-  
-  
     /* Definindo o estilo para o corpo da página */
   body {
     margin-inline: 5%;
@@ -120,6 +41,7 @@ html {
   
   /* Definindo o estilo para o cabeçalho */
   header {
+    position: absolute;
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -222,18 +144,27 @@ html {
   }
 
   .container-cart {
-    margin-top: 20px;
+    display: none;
     position: fixed;
-    top: 7%;
-    margin-left: 60%;
+    top: 3%;
+    margin-left: 75%;
     background-color: aliceblue;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 4px 5px 5px #00000030;
-    width: 30%;
+    width: 18%;
     font-size: 10pt;
   }
 
   .container-cart tbody td {
     margin-right: 5px;
+  }
+
+  .cart-tbody {
+    text-align: center;
+  }
+
+  .cart-table {
+    padding: 2%;
+    width: 120%;
   }
